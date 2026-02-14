@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  portfolio-website:
+    build: .
+    container_name: portfolio-website
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
+      - ./style.css:/usr/share/nginx/html/style.css
+      - ./script.js:/usr/share/nginx/html/script.js
